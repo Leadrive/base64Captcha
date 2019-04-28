@@ -176,7 +176,7 @@ func VerifyCaptchaWithAnswer(answer, verifyValue string) bool {
 //	idKeyD,capD := base64Captcha.GenerateCaptcha("",configD)
 //	//write to base64 string.
 //	base64stringD := base64Captcha.CaptchaWriteToBase64Encoding(capD)
-func GenerateCaptcha(idKey string, configuration interface{}) (id string, captchaInstance CaptchaInterface) {
+func GenerateCaptcha(idKey string, configuration interface{}) (id, answer string, captchaInstance CaptchaInterface) {
 	if idKey == "" {
 		idKey = randomId()
 	}
@@ -202,7 +202,7 @@ func GenerateCaptcha(idKey string, configuration interface{}) (id string, captch
 		log.Fatal("config type not supported", config)
 	}
 
-		globalStore.Set(idKey, verifyValue)
+	globalStore.Set(idKey, verifyValue)
 
-	return idKey, captchaInstance
+	return idKey, verifyValue, captchaInstance
 }
