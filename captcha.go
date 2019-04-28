@@ -113,6 +113,19 @@ func VerifyCaptchaAndIsClear(identifier, verifyValue string, isClear bool) bool 
 	return strings.ToLower(storeValue) == strings.ToLower(verifyValue)
 }
 
+// VerifyCaptchaWithAnswer 带答案验证
+func VerifyCaptchaWithAnswer(answer, verifyValue string) bool {
+	if verifyValue == "" {
+		return false
+	}
+	if answer == "" {
+		return false
+	}
+	result := strings.ToLower(answer) == strings.ToLower(verifyValue)
+
+	return result
+}
+
 //GenerateCaptcha create captcha by config struct and id.
 //idkey can be an empty string, base64 will create a unique id four you.
 //if idKey is a empty string, the package will generate a random unique identifier for you.
@@ -189,7 +202,7 @@ func GenerateCaptcha(idKey string, configuration interface{}) (id string, captch
 		log.Fatal("config type not supported", config)
 	}
 
-	globalStore.Set(idKey, verifyValue)
+		globalStore.Set(idKey, verifyValue)
 
 	return idKey, captchaInstance
 }
