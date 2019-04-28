@@ -1,3 +1,6 @@
+1、修改GenerateCaptcha，返回answer
+2、增加VerifyCaptchaWithAnswer
+
 # Base64captcha supports digits, numbers, alphabet, arithmetic, audio and digit-alphabet captcha.
 [![Go Report Card](https://goreportcard.com/badge/github.com/mojocn/base64Captcha)](https://goreportcard.com/report/github.com/mojocn/base64Captcha)
 [![GoDoc](https://godoc.org/github.com/mojocn/base64Captcha?status.svg)](https://godoc.org/github.com/mojocn/base64Captcha)
