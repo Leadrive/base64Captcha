@@ -223,3 +223,6 @@ func main() {
 
 base64Captcha source code is licensed under the Apache Licence, Version 2.0
 (http://www.apache.org/licenses/LICENSE-2.0.html).
+
+就验证函数做了修改，开放了一个接口
+LEADRIVE®为广州朗成电子科技有限公司
